@@ -3,6 +3,9 @@ import { productosDB } from "../data/productosDb";
 
 //Función para obtener un array de productos de la misma categoria a través de una promesa
 export async function getProductosPorCategoria(categoria : string) : Promise<Producto[]> {
+  console.log('----------------------------------------------');
+  console.log('Llamando a función getProductosPorCategoria();');
+  console.log('----------------------------------------------');
   const promesa : Promise <Producto[]> = new Promise((resolve, reject) =>{
     setTimeout(() => {
       const productos : Producto[] = productosDB.filter(producto => producto.categoria.toLowerCase() === categoria.toLowerCase());
